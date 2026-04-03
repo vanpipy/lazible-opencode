@@ -1,17 +1,37 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
-    "sisyphus": {},
-    "hephaestus": {},
-    "oracle": {},
-    "librarian": {},
-    "explore": {},
-    "multimodal-looker": {},
-    "prometheus": {},
-    "metis": {},
-    "momus": {},
-    "atlas": {},
-    "sisyphus-junior": {}
+    "hephaestus": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "oracle": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "librarian": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "explore": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "multimodal-looker": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "prometheus": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "metis": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "momus": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "atlas": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "sisyphus-junior": {
+      "model": "deepseek/deepseek-chat"
+    },
+    "sisyphus": {}
   },
   "categories": {
     "visual-engineering": {
