@@ -85,6 +85,7 @@ Place Anthropics-compatible skills here for automatic discovery by Superpowersâ€
 ## Troubleshooting
 
 - Load your superpowers skills [superpowers](https://github.com/obra/superpowers/blob/main/docs/README.opencode.md) via "use skill tool to list skills" in the opencode.
+- Install your oh-my-openagent via "npx oh-my-opencode install"
 - 401 or auth errors: verify `OPENCODE_MODEL_API_KEY` is exported in the current shell.
 - Plugin fetch failures: ensure Git is installed and the machine can reach GitHub.
 
