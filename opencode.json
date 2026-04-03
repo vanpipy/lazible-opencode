@@ -107,7 +107,7 @@
     ]
   },
   "plugin": [
-    "superpowers@git+https://github.com/obra/superpowers.git",
-    "oh-my-opencode"
+    "superpowers@git+https://github.com/obra/superpowers.git#v5.0.6",
+    "oh-my-openagent@git+https://github.com/code-yeongyu/oh-my-openagent.git#v3.14.0"
   ]
 }

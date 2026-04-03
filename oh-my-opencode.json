@@ -58,5 +58,11 @@
     "writing": {
       "model": "deepseek/deepseek-chat"
     }
+  },
+  "experimental": {
+    "dcp_for_compaction": true
+  },
+  "comment_checker": {
+    "custom_prompt": "Only check critical logical issues and security problems. Ignore formatting, style and spelling. Respond with concise, concrete fix suggestions."
   }
 }
