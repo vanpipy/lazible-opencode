@@ -109,5 +109,12 @@
   "plugin": [
     "superpowers@git+https://github.com/obra/superpowers.git#v5.0.6",
     "oh-my-openagent"
-  ]
+  ],
+  "mcp": {
+    "personal-knowledge": {
+      "type": "local",
+      "command": ["bunx", "opencode-personal-knowledge"],
+      "enabled": true
+    }
+  }
 }
