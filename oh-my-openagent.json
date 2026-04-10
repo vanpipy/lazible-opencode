@@ -2,61 +2,61 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
     "hephaestus": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "oracle": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "librarian": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "explore": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "multimodal-looker": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "prometheus": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "metis": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "momus": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "atlas": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "sisyphus-junior": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "sisyphus": {}
   },
   "categories": {
     "visual-engineering": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "ultrabrain": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "deep": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "artistry": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "quick": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "unspecified-low": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "unspecified-high": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     },
     "writing": {
-      "model": "deepseek/deepseek-chat"
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7"
     }
   },
   "experimental": {
