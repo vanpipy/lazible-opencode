@@ -28,8 +28,24 @@
       "name": "MiniMax Coding Plan",
       "options": {
         "baseURL": "https://api.minimaxi.com/anthropic/v1",
+        "timeout": 600000,
+        "chunkTimeout": 120000
       },
       "models": {
+        "MiniMax-M1": {
+          "name": "MiniMax-M1",
+          "options": {
+            "temperature": 0.2,
+            "maxTokens": 4096
+          }
+        },
+        "MiniMax-M2.5": {
+          "name": "MiniMax-M2.5",
+          "options": {
+            "temperature": 0.2,
+            "maxTokens": 8192
+          }
+        },
         "MiniMax-M2.7": {
           "name": "MiniMax-M2.7",
           "options": {
@@ -72,6 +88,19 @@
       "permission": {
         "edit": "ask",
         "bash": "ask"
+      }
+    },
+    "review": {
+      "description": "Role: Senior Auditor & Auto-Fix Expert. [Inherit: Momus Critique]. [Action]: Audit for security/logic and fix via file_write.",
+      "mode": "subagent",
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
+      "temperature": 0.2,
+      "steps": 8,
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "webfetch": "deny",
+        "task": { "*": "allow" }
       }
     }
   },

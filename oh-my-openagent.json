@@ -1,27 +1,39 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "agents": {
-    "hephaestus": { "model": "minimax/MiniMax-M2.7" },
-    "prometheus": { "model": "minimax/MiniMax-M2.7" },
+    "hephaestus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+    "prometheus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
 
     "momus": {
-      "model": "minimax/MiniMax-M1",
-      "prompt": "Role: Senior Auditor. [Logic]: Use deep CoT to find bugs. [Action]: For every bug, you MUST output a block: 'FIX_SUGGESTION: [code...]'. Your goal is to provide these blocks so Sisyphus can apply them."
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "prompt": "Role: Senior Auditor & Auto-Fix Expert. [Inherit: Momus Critique]. [Action]: Audit for security/logic and pass issues to sisyphus to fix."
     },
 
-    "sisyphus": { "model": "minimax/MiniMax-M2.5" },
-    "explore": { "model": "minimax/MiniMax-M2.5" },
-    "metis": { "model": "minimax/MiniMax-M2.5" },
-    "librarian": { "model": "minimax/MiniMax-M2.5" },
+    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
 
-    "atlas": { "model": "minimax/MiniMax-M2.5" },
-    "oracle": { "model": "minimax/MiniMax-M1" }
+    "atlas": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M1" }
   },
 
   "categories": {
-    "deep": { "model": "minimax/MiniMax-M1" },
-    "quick": { "model": "minimax/MiniMax-M2.5" },
-    "unspecified-high": { "model": "minimax/MiniMax-M2.7" }
+    "deep": { "model": "minimax-cn-coding-plan/MiniMax-M1" },
+    "quick": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+
+    "hephaestus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+    "prometheus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+
+    "momus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+
+    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+
+    "atlas": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" }
   },
 
   "experimental": {
