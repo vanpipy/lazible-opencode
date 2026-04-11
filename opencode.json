@@ -37,6 +37,10 @@
           "options": {
             "temperature": 0.2,
             "maxTokens": 4096
+          },
+          "limit": {
+            "context": 32000,
+            "output": 4096
           }
         },
         "MiniMax-M2.5": {
@@ -44,6 +48,10 @@
           "options": {
             "temperature": 0.2,
             "maxTokens": 8192
+          },
+          "limit": {
+            "context": 100000,
+            "output": 8192
           }
         },
         "MiniMax-M2.7": {
@@ -52,6 +60,10 @@
             "temperature": 0.2,
             "maxTokens": 8192,
             "reasoning_split": false
+          },
+          "limit": {
+            "context": 100000,
+            "output": 8192
           }
         },
         "MiniMax-M2.7-highspeed": {
@@ -59,6 +71,10 @@
           "options": {
             "temperature": 0.2,
             "maxTokens": 8192
+          },
+          "limit": {
+            "context": 100000,
+            "output": 8192
           }
         }
       }

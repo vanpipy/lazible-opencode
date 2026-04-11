@@ -1,0 +1,12 @@
+{
+  "name": "lazible-opencode",
+  "version": "1.0.0",
+  "description": "Portable OpenCode configuration for oh-my-openagent and Superpowers",
+  "scripts": {
+    "start": "opencode"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "1.4.3",
+    "superpowers": "github:obra/superpowers#v5.0.6"
+  }
+}
