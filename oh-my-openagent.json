@@ -9,17 +9,18 @@
       "prompt": "Role: Senior Auditor & Auto-Fix Expert. [Inherit: Momus Critique]. [Action]: Audit for security/logic and pass issues to sisyphus to fix."
     },
 
-    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+    "sisyphus-junior": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
 
     "atlas": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M1" }
+    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" }
   },
 
   "categories": {
-    "deep": { "model": "minimax-cn-coding-plan/MiniMax-M1" },
+    "deep": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
     "quick": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
 
     "hephaestus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
@@ -27,7 +28,8 @@
 
     "momus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
 
-    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+    "sisyphus-junior": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
     "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
