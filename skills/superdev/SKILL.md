@@ -26,10 +26,10 @@ This skill provides a standardized application development workflow applicable t
 │  Create/update DESIGN.md → Technical specification docs          │
 ├──────────────────────────────────────────────────────────────────┤
 │  Phase 2: Requirements Analysis                                   │
-│  speckit workflow  OR  manual SPEC.md creation                   │
+│  speckit workflow  OR  manual spec.md creation                   │
 ├──────────────────────────────────────────────────────────────────┤
 │  Phase 3: Implementation Planning                                 │
-│  Create PLAN.md + TASKS.md → Task breakdown                      │
+│  Create plan.md + tasks.md → Task breakdown                      │
 ├──────────────────────────────────────────────────────────────────┤
 │  Phase 4: Incremental Development                                 │
 │  Dispatch via task tool → Code review → Test → Commit            │
@@ -71,7 +71,7 @@ Run the following command to check if the speckit tool exists:
 ║  Please use the manual workflow instead:                       ║
 ║                                                                ║
 ║  How to continue:                                              ║
-║  1. Manually create docs/SPEC.md (see Phase 2B template)       ║
+║  1. Manually create docs/spec.md (see Phase 2B template)       ║
 ║  2. Proceed to Phase 3 Implementation Planning                 ║
 ║                                                                ║
 ║  To enable the speckit workflow, install the speckit plugin.   ║
@@ -226,7 +226,7 @@ Based on the Phase 0 results, choose one of the following execution paths:
 /speckit.specify
 ```
 
-Or manually create `docs/SPEC.md`:
+Or manually create `docs/spec.md`:
 
 ```markdown
 # Functional Specification
@@ -275,7 +275,7 @@ Clarify 4 key questions:
 ```
 
 Outputs:
-- `PLAN.md` – Phased implementation plan
+- `plan.md` – Phased implementation plan
 - `DATA_MODEL.md` – Data model design
 - `contracts/` – Interface contracts
 
@@ -285,7 +285,7 @@ Outputs:
 /speckit.tasks
 ```
 
-Outputs `TASKS.md`:
+Outputs `tasks.md`:
 - Tasks organized by phase / module
 - Each task includes: ID, name, description, acceptance criteria
 - Inter-task dependencies are marked
@@ -308,13 +308,13 @@ Validates:
 
 When speckit is not available, follow these steps manually:
 
-#### Step 1: Create SPEC.md
+#### Step 1: Create spec.md
 
-Use the SPEC.md template from Phase 2A to create `docs/SPEC.md`.
+Use the spec.md template from Phase 2A to create `docs/spec.md`.
 
 #### Step 2: Requirements Clarification
 
-Manually answer the 4 clarification questions (write them into SPEC.md or a separate document):
+Manually answer the 4 clarification questions (write them into spec.md or a separate document):
 
 ```markdown
 ## Requirements Clarification
@@ -334,32 +334,32 @@ Manually answer the 4 clarification questions (write them into SPEC.md or a sepa
 - [Primary uncertainties]
 ```
 
-#### Step 3: Create PLAN.md
+#### Step 3: Create plan.md
 
-Use the PLAN.md template from Phase 3 to create `docs/PLAN.md`.
+Use the plan.md template from Phase 3 to create `docs/plan.md`.
 
-#### Step 4: Create TASKS.md
+#### Step 4: Create tasks.md
 
-Use the TASKS.md template from Phase 3 to create `docs/TASKS.md`.
+Use the tasks.md template from Phase 3 to create `docs/tasks.md`.
 
 #### Step 5: Self-Check
 
 Manually verify:
-- [ ] Every user story in SPEC.md has acceptance criteria
+- [ ] Every user story in spec.md has acceptance criteria
 - [ ] All 4 clarification questions are answered
-- [ ] PLAN.md has complete phase breakdown
-- [ ] TASKS.md covers all features
+- [ ] plan.md has complete phase breakdown
+- [ ] tasks.md covers all features
 
 ---
 
 ## Phase 3: Implementation Planning
 
 ### Goal
-Create `PLAN.md` and `TASKS.md` to translate specifications into executable tasks.
+Create `plan.md` and `tasks.md` to translate specifications into executable tasks.
 
 ### Steps
 
-1. **Create / update `PLAN.md`**
+1. **Create / update `plan.md`**
 
 ```markdown
 # Implementation Plan
@@ -387,7 +387,7 @@ Create `PLAN.md` and `TASKS.md` to translate specifications into executable task
 | [Risk description] | [Severity] | [Response] |
 ```
 
-2. **Create / update `TASKS.md`**
+2. **Create / update `tasks.md`**
 
 ```markdown
 # Task List
@@ -407,27 +407,27 @@ Create `PLAN.md` and `TASKS.md` to translate specifications into executable task
 - Mark dependency relationships (which tasks must be completed first)
 
 ### Acceptance Criteria
-- [ ] PLAN.md contains all phase breakdowns
-- [ ] TASKS.md covers all user stories
+- [ ] plan.md contains all phase breakdowns
+- [ ] tasks.md covers all user stories
 - [ ] Every task has acceptance criteria
 - [ ] Dependency relationships are correctly marked
 
 ## Phase 4: Incremental Development
 
 ### Goal
-Execute tasks from TASKS.md, committing one small, complete change at a time.
+Execute tasks from tasks.md, committing one small, complete change at a time.
 
 ### Phase 4 Entry Checklist
 
 Before starting, ensure:
-- [ ] TASKS.md has been created
+- [ ] tasks.md has been created
 - [ ] Development branch has been created and checked out
 - [ ] Tasks are sorted by dependency order
 
 ### Execution Flow
 
 ```
-for each task in TASKS.md (in dependency order):
+for each task in tasks.md (in dependency order):
     1. Mark task as in_progress
     2. Dispatch subagent using the task tool
     3. Wait for task completion
@@ -465,7 +465,7 @@ task(category="deep", load_skills=["superpowers/subagent-driven-development"], p
 - [Deliverable 1]
 - [Deliverable 2]
 
-## REQUIREMENTS (from TASKS.md)
+## REQUIREMENTS (from tasks.md)
 - {requirement_1}
 - {requirement_2}
 
@@ -504,8 +504,8 @@ task(category="deep", load_skills=["superpowers/subagent-driven-development"], p
 After implementation, you must verify:
 
 1. **Functional Verification**
-   - [ ] Meets requirements in SPEC.md
-   - [ ] Meets acceptance criteria in TASKS.md
+   - [ ] Meets requirements in spec.md
+   - [ ] Meets acceptance criteria in tasks.md
 
 2. **Code Quality**
    - [ ] lsp_diagnostics reports no errors
@@ -547,7 +547,7 @@ Failure → Log the issue → Escalate for manual intervention
 
 ### Parallel Execution
 
-**Identify parallel opportunities:** Look for tasks in TASKS.md with no dependency relationships.
+**Identify parallel opportunities:** Look for tasks in tasks.md with no dependency relationships.
 
 **Parallel execution rules:**
 - Run at most 3 tasks in parallel (to avoid resource contention)
@@ -575,8 +575,8 @@ Ensure all tasks are complete, quality standards are met, and the work is ready 
 
 ### Documentation Completeness
 - [ ] DESIGN.md is consistent with the implementation
-- [ ] All requirements in SPEC.md are implemented
-- [ ] All tasks in TASKS.md are marked completed
+- [ ] All requirements in spec.md are implemented
+- [ ] All tasks in tasks.md are marked completed
 
 ### Code Quality
 - [ ] All tests pass
@@ -618,7 +618,7 @@ EOF
 ```
 
 ### Acceptance Criteria
-- [ ] All tasks in TASKS.md are marked completed
+- [ ] All tasks in tasks.md are marked completed
 - [ ] All tests pass
 - [ ] lsp_diagnostics reports no errors
 - [ ] Code review approved
@@ -630,9 +630,9 @@ EOF
 {project}/
 ├── docs/
 │   ├── DESIGN.md          # Architecture design
-│   ├── SPEC.md            # Functional specification
-│   ├── PLAN.md            # Implementation plan
-│   └── TASKS.md           # Task list
+│   ├── spec.md            # Functional specification
+│   ├── plan.md            # Implementation plan
+│   └── tasks.md           # Task list
 ├── src/                   # Source code
 ├── tests/                 # Test files
 ├── scripts/               # Scripts
@@ -645,9 +645,9 @@ EOF
 | File | Required | Description |
 |------|----------|-------------|
 | DESIGN.md | Yes | Architecture design, created in Phase 1 |
-| SPEC.md | Yes | Functional specification, created in Phase 2 |
-| PLAN.md | Yes | Implementation plan, created in Phase 3 |
-| TASKS.md | Yes | Task list, created in Phase 3 |
+| spec.md | Yes | Functional specification, created in Phase 2 |
+| plan.md | Yes | Implementation plan, created in Phase 3 |
+| tasks.md | Yes | Task list, created in Phase 3 |
 | AGENTS.md | Recommended | Strongly recommended for multi-agent collaboration |
 
 ## Differences from Superdev (video MCP variant)
@@ -664,7 +664,7 @@ EOF
 1. **Commit in small steps**: Commit after each task is complete — easier to review and roll back
 2. **Task granularity**: Each task should be completable in 1–4 hours
 3. **Acceptance criteria**: Every task must have explicit, testable acceptance criteria
-4. **Dependency management**: Clearly mark task dependencies in TASKS.md
+4. **Dependency management**: Clearly mark task dependencies in tasks.md
 5. **Continuous integration**: Recommend configuring CI to run tests and checks automatically
 
 ## Quality Standards
@@ -684,7 +684,7 @@ EOF
 | Phase 0 | Check `/speckit.specify --help` + DESIGN.md health (≥ 60%) |
 | Phase 1 | Create / update `docs/DESIGN.md` |
 | Phase 2A | Run `/speckit.specify/clarify/plan/tasks/analyze` |
-| Phase 2B | Manually create `docs/SPEC.md` |
-| Phase 3 | Create `docs/PLAN.md`, `docs/TASKS.md` |
+| Phase 2B | Manually create `docs/spec.md` |
+| Phase 3 | Create `docs/plan.md`, `docs/tasks.md` |
 | Phase 4 | Dispatch tasks via `task(category="deep", ...)` |
 | Phase 5 | Create PR/MR via `gh pr create` |
