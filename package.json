@@ -6,7 +6,7 @@
     "start": "opencode"
   },
   "dependencies": {
-    "@opencode-ai/plugin": "1.4.3",
+    "@opencode-ai/plugin": "1.4.7",
     "superpowers": "github:obra/superpowers#v5.0.6"
   }
 }
