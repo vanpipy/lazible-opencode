@@ -180,11 +180,6 @@
     "@broskees/opencode-codebase-graph"
   ],
   "mcp": {
-    "personal-knowledge": {
-      "type": "local",
-      "command": ["bunx", "opencode-personal-knowledge"],
-      "enabled": true
-    },
     "MiniMax": {
       "type": "local",
       "command": ["uvx", "minimax-coding-plan-mcp", "-y"],
