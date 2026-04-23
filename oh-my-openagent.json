@@ -1,48 +1,77 @@
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "experimental": {
+    "task_system": true,
+    "dcp_for_compaction": true,
+    "native_file_watcher": true,
+    "aggressive_truncation": true
+  },
   "agents": {
-    "hephaestus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-    "prometheus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-
+    "sisyphus": {
+      "category": "deep",
+      "permission": {
+        "doom_loop": "allow",
+        "bash": "allow",
+        "edit": "allow"
+      }
+    },
+    "hephaestus": { "category": "deep" },
+    "prometheus": { "category": "deep" },
     "momus": {
-      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "category": "deep",
       "prompt": "Role: Senior Auditor & Auto-Fix Expert. [Inherit: Momus Critique]. [Action]: Audit for security/logic and pass issues to sisyphus to fix."
     },
-
-    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-    "sisyphus-junior": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-
-    "atlas": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" }
+    "oracle": { "category": "deep" },
+    "metis": { "category": "deep" },
+    "multimodal-looker": { "category": "deep" },
+    "atlas": { "category": "quick" },
+    "librarian": { "category": "quick" },
+    "explore": { "category": "quick" },
+    "sisyphus-junior": { "category": "quick" }
   },
-
   "categories": {
-    "deep": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-    "quick": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-
-    "hephaestus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-    "prometheus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-
-    "momus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-
-    "sisyphus": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
-    "sisyphus-junior": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "explore": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "metis": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "librarian": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-
-    "atlas": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
-    "oracle": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" }
+    "deep": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "temperature": 0.2,
+      "description": "High-reasoning tasks"
+    },
+    "quick": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
+      "temperature": 0.1,
+      "description": "Fast, low-cost tasks"
+    },
+    "visual-engineering": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
+      "temperature": 0.2,
+      "description": "UI/UX analysis and engineering"
+    },
+    "ultrabrain": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "temperature": 0.1
+    },
+    "artistry": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "temperature": 0.3
+    },
+    "writing": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
+      "temperature": 0.5
+    },
+    "unspecified-high": { "model": "minimax-cn-coding-plan/MiniMax-M2.7" },
+    "unspecified-low": { "model": "minimax-cn-coding-plan/MiniMax-M2.5" },
+    "speckit-fixer": {
+      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
+      "is_unstable_agent": true,
+      "prompt_append": "Your goal is zero issues. Workflow: Run speckit.analyze, fix all detected issues, then re-run speckit.analyze. Repeat until 0 issues remain."
+    }
   },
-
-  "experimental": {
-    "dcp_for_compaction": true,
-    "native_file_watcher": true
-  },
-
+  "commands": [
+    {
+      "name": "fix-spec",
+      "description": "Start Speckit auto-fix loop",
+      "pattern": "/fix-spec (.*)",
+      "handler": "task(category='speckit-fixer', goal='$1')"
+    }
+  ],
   "comment_checker": {
     "custom_prompt": "Audit for critical logical bugs and security vulnerabilities. Respond with concise, concrete fix suggestions. Ignore style and formatting."
   }
