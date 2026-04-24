@@ -70,11 +70,6 @@
   "small_model": "minimax-cn-coding-plan/MiniMax-M2.7",
   "autoupdate": "notify",
   "snapshot": false,
-  "tui": {
-    "scroll_acceleration": {
-      "enabled": true
-    }
-  },
   "formatter": {
     "biome": {
       "command": ["npx", "biome", "format", "--write", "$FILE"],
@@ -99,97 +94,7 @@
       ":(){:|:&};:": "deny"
     }
   },
-  "agent": {
-    "build": {
-      "mode": "primary",
-      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
-      "temperature": 0.3,
-      "permission": {
-        "edit": "allow",
-        "bash": {
-          "rm": "ask",
-          "trash": "ask"
-        }
-      }
-    },
-    "plan": {
-      "mode": "primary",
-      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
-      "temperature": 0.5,
-      "tools": {
-        "write": false,
-        "edit": false,
-        "patch": false
-      },
-      "permission": {
-        "bash": {
-          "git status": "allow",
-          "git diff*": "allow",
-          "git log*": "allow",
-          "git show*": "allow",
-          "bd *": "allow",
-          "rg *": "allow",
-          "tree *": "allow",
-          "wc *": "allow",
-          "head *": "allow",
-          "tail *": "allow",
-          "pnpm exec tsc*": "allow",
-          "pnpm run lint*": "allow",
-          "pnpm test*": "allow",
-          "*": "deny"
-        }
-      }
-    },
-    "review": {
-      "description": "Role: Senior Auditor & Auto-Fix Expert. [Inherit: Momus Critique]. [Action]: Audit for security/logic and fix via file_write.",
-      "mode": "subagent",
-      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
-      "temperature": 0.2,
-      "steps": 8,
-      "permission": {
-        "edit": "allow",
-        "bash": "allow",
-        "webfetch": "deny",
-        "task": { "*": "allow" }
-      }
-    },
-    "security": {
-      "model": "minimax-cn-coding-plan/MiniMax-M2.7",
-      "temperature": 0.1,
-      "tools": {
-        "write": false,
-        "edit": false,
-        "patch": false
-      },
-      "description": "Security auditor - scans for vulnerabilities using Snyk tools (SCA, SAST, IaC, container). Read-only, reports findings without modification."
-    },
-    "test-writer": {
-      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
-      "temperature": 0.2,
-      "permission": {
-        "write": {
-          "**/*.test.ts": "allow",
-          "**/*.spec.ts": "allow",
-          "**/*.test.tsx": "allow",
-          "**/*.spec.tsx": "allow",
-          "*": "deny"
-        }
-      },
-      "description": "Test specialist - generates comprehensive unit, integration, and e2e tests. Can only write to test files."
-    },
-    "docs": {
-      "model": "minimax-cn-coding-plan/MiniMax-M2.5",
-      "temperature": 0.3,
-      "permission": {
-        "write": {
-          "**/*.md": "allow",
-          "**/*.mdx": "allow",
-          "*": "deny"
-        }
-      },
-      "description": "Documentation writer - generates and updates markdown docs, READMEs, and guides. Can only write to .md/.mdx files."
-    }
-  },
+  "agent": {},
   "watcher": {
     "ignore": [
       ".git/**",
