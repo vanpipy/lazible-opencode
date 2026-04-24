@@ -26,7 +26,7 @@ You orchestrate a two-phase workflow:
 ### Phase 1: Invoke Build
 
 1. Construct a clear prompt for the build agent based on user request
-2. Use `task` tool with subagent_type="build" to spawn build agent
+2. Use `task` tool with subagent_type="coordinator" to spawn coordinator agent
 3. Wait for build agent to complete
 4. Capture the response — note what was built, files changed, any issues
 
