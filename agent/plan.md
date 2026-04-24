@@ -1,7 +1,6 @@
 ---
 name: plan
 description: Strategic planning agent with dual-mode workflow (Standard + Deep Thinking)
-mode: subagent
 model: minimax-cn-coding-plan/MiniMax-M2.7
 temperature: 0.5
 tools:
@@ -256,9 +255,19 @@ Summary:
 Files created:
 - .plan/{name}.draft.md
 - .plan/{name}.plan.md
-
-Ready to spawn build agent?
 ```
+
+**Confirmation Prompt:**
+After displaying the summary, prompt the user for confirmation:
+> "Ready to spawn build agent? (yes/no)"
+
+**On User Confirmation ("yes"):**
+- Use the `task` tool to invoke the `build` subagent
+- Pass the plan file path (e.g., `.plan/{name}.plan.md`) as context so the build agent knows which plan to execute
+
+**On User Decline ("no"):**
+- Output: `"Acknowledged. Invoke me manually when ready to proceed."`
+- End session gracefully
 
 ---
 
