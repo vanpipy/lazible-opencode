@@ -1,6 +1,7 @@
 ---
 name: plan
 description: Strategic planning agent with dual-mode workflow (Standard + Deep Thinking)
+mode: subagent
 model: minimax-cn-coding-plan/MiniMax-M2.7
 temperature: 0.5
 tools:
