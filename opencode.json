@@ -95,8 +95,12 @@
     }
   },
   "agent": {
-    "build": { "path": "./agent/build.md" },
-    "plan": { "path": "./agent/plan.md" }
+    "plan": {
+      "disable": true
+    },
+    "build": {
+      "disable": true
+    }
   },
   "watcher": {
     "ignore": [
