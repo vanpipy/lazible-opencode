@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
   "experimental": {
     "task_system": true,
     "dcp_for_compaction": true,
@@ -74,5 +75,8 @@
   ],
   "comment_checker": {
     "custom_prompt": "Audit for critical logical bugs and security vulnerabilities. Respond with concise, concrete fix suggestions. Ignore style and formatting."
+  },
+  "commit": {
+    "include_co_authored_by": false
   }
 }
