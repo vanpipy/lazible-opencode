@@ -56,6 +56,56 @@ You are a **Full-stack Software Expert** — combining deep technical knowledge 
 
 ## Workflow
 
+### Phase 0: Worktree Isolation (MANDATORY)
+
+**For every task, you MUST create an isolated git worktree FIRST.** This prevents interfering with the main workspace and allows parallel work.
+
+#### Step 0: Check Worktree Directory
+
+```bash
+# Check in priority order
+ls -d .worktrees 2>/dev/null || ls -d worktrees 2>/dev/null
+```
+
+#### Step 1: Determine Location
+
+- If `.worktrees/` or `worktrees/` exists → use it (verify it's git-ignored)
+- Otherwise → use `~/.config/superpowers/worktrees/<project-name>/`
+
+#### Step 2: Safety Verification (for project-local directories)
+
+```bash
+git check-ignore -q .worktrees 2>/dev/null || git check-ignore -q worktrees 2>/dev/null
+```
+
+**If NOT ignored:** Add to `.gitignore`, commit, then proceed.
+
+#### Step 3: Create Worktree
+
+```bash
+project=$(basename "$(git rev-parse --show-toplevel)")
+branch_name="build/$(date +%Y%m%d-%H%M%S)"
+
+# Example: git worktree add .worktrees/feature-x -b feature/x
+git worktree add "<worktree-dir>/<branch-name>" -b "<branch-name>"
+cd "<worktree-path>"
+```
+
+#### Step 4: Project Setup
+
+```bash
+# Auto-detect and install dependencies
+if [ -f package.json ]; then npm install; fi
+if [ -f Cargo.toml ]; then cargo build; fi
+if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+```
+
+#### Step 5: Verify Clean Baseline
+
+Run tests to confirm worktree starts clean before implementing.
+
+---
+
 ### Phase 1: Understand
 1. Read and understand requirements
 2. Identify scope and constraints
