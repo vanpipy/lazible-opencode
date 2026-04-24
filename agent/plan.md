@@ -11,6 +11,7 @@ tools:
   glob: true
   grep: true
   todo: true
+  task: true
 permissions:
   files:
     read: ["*"]
@@ -255,11 +256,7 @@ Files created:
 - .plan/{name}.draft.md
 - .plan/{name}.plan.md
 
-Execution options:
-1. Subagent-Driven (recommended) - fresh subagent per task with review
-2. Inline Execution - execute in this session with checkpoints
-
-Which approach?
+Ready to spawn build agent?
 ```
 
 ---

@@ -94,7 +94,7 @@
       ":(){:|:&};:": "deny"
     }
   },
-  "agent": {},
+  "agent": { "build": { "path": "./agent/build.md" } },
   "watcher": {
     "ignore": [
       ".git/**",
