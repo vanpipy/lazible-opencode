@@ -52,16 +52,6 @@
             "context": 100000,
             "output": 8192
           }
-        },
-        "MiniMax-M2.7-highspeed": {
-          "name": "MiniMax-M2.7-highspeed",
-          "options": {
-            "maxTokens": 8192
-          },
-          "limit": {
-            "context": 100000,
-            "output": 8192
-          }
         }
       }
     }
